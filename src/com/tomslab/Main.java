@@ -12,6 +12,6 @@ public class Main
     System.out.println("LOL?");
     System.out.println("LULZ");
     foka();
-    System.out.println("Main.maina.AHHHHH");
+    System.out.println("Main.maina.AHHUMZHHH");
   }
 }
