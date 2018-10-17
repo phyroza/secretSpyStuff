@@ -9,8 +9,7 @@ public class Main
     System.out.println("KWKWI");
   }
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) throws InterruptedException {
     System.out.println("LOL?");
     System.out.println("LULZ");
     foka();
@@ -24,6 +23,7 @@ public class Main
       Thread.sleep(1500);
     } catch (InterruptedException e) {
       e.printStackTrace();
+      throw new InterruptedException(e.getMessage());
     }
   }
 
