@@ -1,22 +1,38 @@
 package com.tomslab;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-class MainTest {
+public class MainTest {
   Main m;
-  @org.junit.jupiter.api.BeforeEach
-  void setUp() {
+
+  public void setUp() {
     m = new Main();
   }
 
-  @org.junit.jupiter.api.AfterEach
+
   void tearDown() {
   }
 
-  @org.junit.jupiter.api.Test
-  void getZonk() {
+  @Test
+  public void getZonk() {
      m.getZonk();
-     assertEquals(m.getZonk(), "Zonk");
-     assertEquals(SecretStuffProvider.provideInt(),15);
+     assertEquals("Zonk", m.getZonk());
+     assertEquals(15, SecretStuffProvider.provideInt());
+  }
+
+  @Test
+  public void foka() {
+    assertEquals(1, (int)1);
+  }
+
+  @Test
+  public void main() {
+    assertEquals(1,(int)1);
+  }
+
+  @Test
+  public void getNara() {
+    assertEquals("Nara", m.getNara());
   }
 }

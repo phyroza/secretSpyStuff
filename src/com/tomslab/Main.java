@@ -20,7 +20,7 @@ public class Main
     Scanner in = new Scanner(System.in);
     in.nextLine();
     try {
-      Thread.sleep(1500);
+
     } catch (InterruptedException e) {
       e.printStackTrace();
       throw new InterruptedException(e.getMessage());
@@ -31,4 +31,5 @@ public class Main
   {
     return "Zonk";
   }
+  public static String getNara(){ return "Nara";}
 }
