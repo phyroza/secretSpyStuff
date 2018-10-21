@@ -1,18 +1,13 @@
 package com.tomslab;
 
+import org.junit.Before;
 import org.junit.Test;
+import com.tomslab.Main;
+
 import static org.junit.Assert.assertEquals;
 
 public class MainTest {
   Main m;
-
-  public void setUp() {
-    m = new Main();
-  }
-
-
-  void tearDown() {
-  }
 
   @Test
   public void getZonk() {
@@ -35,4 +30,10 @@ public class MainTest {
   public void getNara() {
     assertEquals("Nara", m.getNara());
   }
+
+  @Before
+  public void setUp() throws Exception {
+  }
+
+
 }
