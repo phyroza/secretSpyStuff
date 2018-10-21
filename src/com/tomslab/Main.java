@@ -19,12 +19,7 @@ public class Main
     System.out.println(a+b);
     Scanner in = new Scanner(System.in);
     in.nextLine();
-    try {
 
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-      throw new InterruptedException(e.getMessage());
-    }
   }
 
   public static String getZonk()
