@@ -12,7 +12,6 @@ public class MainTest {
   String a = new String();
   String b = new String();
 
-
   public MainTest() throws IOException
   {
   }
