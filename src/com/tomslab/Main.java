@@ -1,30 +1,56 @@
 package com.tomslab;
 
-import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main
 {
+  private static final Logger LOGGER = Logger.getLogger("root");
+  public static final int SHAWNS_CONST = 2;
+  public static final int DAN_CONST = 4;
+  public static final String GOODBYE_MESSAGE = "Nara";
+  public static final String ZONK = "Zonk";
+
   public static void foka()
   {
-    System.out.println("KWKWI");
+    LOGGER.log(Level.INFO,"KWKWI");
   }
 
-  public static void main(String[] args) throws InterruptedException {
-    System.out.println("LOL?");
-    System.out.println("LULZ");
+  public static void main(String[] args)
+  {
+    LOGGER.log(Level.INFO,"LOL?");
+    LOGGER.log(Level.INFO,"LULZ");
     foka();
-    int a = 2;
-    int b = 4;
-    System.out.println("Main.maina.AHHUMZHHH.stupidfucks");
-    System.out.println(a+b);
-    Scanner in = new Scanner(System.in);
-    in.nextLine();
-
+    int a = SHAWNS_CONST;
+    int b = DAN_CONST;
+    LOGGER.log(Level.INFO,"Main.maina.AHHUMZHHH.stupidfucks");
+    int c = a + b;
+    LOGGER.log(Level.INFO, "{0}", c);
   }
 
+  /**
+   *
+   * @return String zonk
+   */
   public static String getZonk()
   {
-    return "Zonk";
+    return ZONK;
   }
-  public static String getNara(){ return "Nara";}
+
+  public static String getZonks(int count)
+  {
+    StringBuilder zonk = new StringBuilder();
+    for (int i=0;i<count;i++)
+    {
+      zonk.append("zonk");
+    }
+    String s;
+    s = zonk.toString();
+    return s;
+  }
+
+  public static String getNara()
+  {
+    return GOODBYE_MESSAGE;
+  }
 }
