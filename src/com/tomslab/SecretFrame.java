@@ -8,7 +8,6 @@ public class SecretFrame extends JFrame
   public SecretFrame(){
     super("secretFrame");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//    setLayout(new GridLayout(1,3,15,15));
     setLayout(new FlowLayout());
     setSize(320,180);
     setLocation(50,50);

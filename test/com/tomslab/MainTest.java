@@ -18,15 +18,15 @@ public class MainTest {
 
   @Test
   public void getZonk() {
-     m.getZonk();
-     assertEquals("Zonk", m.getZonk());
+     SecretStuffProvider.getZonk();
+     assertEquals("Zonk", SecretStuffProvider.getZonk());
      assertEquals(15, SecretStuffProvider.provideInt());
   }
 
   @Test
   public void getZonksTest()
   {
-    assertEquals("zonkzonk", m.getZonks(2));
+    assertEquals("zonkzonk", SecretStuffProvider.getZonks(2));
   }
 
   @Test
@@ -44,7 +44,7 @@ public class MainTest {
   @Test
   public void getNara()
   {
-    assertEquals("Nara", m.getNara());
+    assertEquals("Nara", SecretStuffProvider.getNara());
   }
 
   @Before
