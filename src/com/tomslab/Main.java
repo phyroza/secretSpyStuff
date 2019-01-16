@@ -11,7 +11,6 @@ public class Main
   {
     LOGGER.log(Level.INFO,"LOL?");
     LOGGER.log(Level.INFO,"LULZ");
-    SecretStuffProvider.foka();
     int a = SecretStuffProvider.SHAWNS_CONST;
     int b = SecretStuffProvider.DAN_CONST;
     LOGGER.log(Level.INFO,"Main.maina.AHHUMZHHH.stupidfucks");

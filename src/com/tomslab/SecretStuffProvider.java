@@ -13,7 +13,8 @@ public class SecretStuffProvider
   public static final String ZONK = "Zonk";
   public static final int ZONK_COUNT = 15;
   private static final Logger LOGGER =  Logger.getGlobal();
-  private Main m;
+
+  //  private Main m;
   public SecretStuffProvider()
   {
 //    m.toString();
