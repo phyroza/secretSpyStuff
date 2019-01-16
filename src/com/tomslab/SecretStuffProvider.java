@@ -1,5 +1,7 @@
 package com.tomslab;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,7 +16,7 @@ public class SecretStuffProvider
   private Main m;
   public SecretStuffProvider()
   {
-    m.hashCode();
+//    m.toString();
   }
   public static int provideInt()
   {
@@ -35,6 +37,7 @@ public class SecretStuffProvider
    *
    * @return String zonk
    */
+  @NotNull
   public static String getZonk()
   {
     return ZONK;
@@ -52,6 +55,7 @@ public class SecretStuffProvider
     return s;
   }
 
+  @NotNull
   public static String getNara()
   {
     return GOODBYE_MESSAGE;

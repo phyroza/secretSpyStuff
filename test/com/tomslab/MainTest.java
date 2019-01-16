@@ -1,18 +1,17 @@
 package com.tomslab;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
 public class MainTest {
   Main m;
-  String a = new String();
-  String b = new String();
+  @NotNull String a = new String();
+  @NotNull String b = new String();
 
-  public MainTest() throws IOException
+  public MainTest()
   {
   }
 
@@ -32,13 +31,13 @@ public class MainTest {
   @Test
   public void foka()
   {
-    assertEquals(1, (int)1);
+    assertEquals(1, 1);
   }
 
   @Test
   public void main()
   {
-    assertEquals(1,(int)1);
+    assertEquals(1, 1);
   }
 
   @Test
@@ -48,7 +47,7 @@ public class MainTest {
   }
 
   @Before
-  public void setUp() throws Exception
+  public void setUp()
   {
   }
 
