@@ -23,12 +23,13 @@ public class EchoClient
       System.out.println("Ready, type stuff!");
       String stuff = userInput.readLine();
 
-      while (stuff != null && stuff != "bye")
+      while (stuff != null)
       {
         System.out.println("Sending: " + stuff);
 
         out.println(stuff);
-
+        if ("bye".equals(stuff))
+          break;
         System.out.println("Got smth: \n" + in.readLine());
         System.out.println("Type next line..");
         stuff = userInput.readLine();

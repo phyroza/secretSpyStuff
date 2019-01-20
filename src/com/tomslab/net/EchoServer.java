@@ -11,7 +11,7 @@ public class EchoServer
 {
   public static void main(String[] args) throws IOException
   {
-    while (1 == 1)
+//    while (1 == 1)
     {
       tryEcho(args[0]);
     }
@@ -35,6 +35,8 @@ public class EchoServer
         String line = in.readLine();
         while (line != null)
         {
+          if ("bye".equals(line))
+            break;
           System.out.println("Sending back: " + line.toUpperCase());
           out.println(line.toUpperCase());
           line = in.readLine();
