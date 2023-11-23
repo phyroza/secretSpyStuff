@@ -7,9 +7,9 @@ public class Exercise1 {
     private static class Calendar {
         private static final String DAYS_SEPARATOR = "\t";
 
-        public static void displayCalendar() {
+        public static void displayCalendar(LocalDate date) {
             printHeader();
-            printDays(LocalDate.now());
+            printDays(date);
         }
 
         private static void printHeader() {
@@ -41,6 +41,6 @@ public class Exercise1 {
     }
 
     public static void main(String[] args) {
-        Calendar.displayCalendar();
+        Calendar.displayCalendar(LocalDate.now());
     }
 }
