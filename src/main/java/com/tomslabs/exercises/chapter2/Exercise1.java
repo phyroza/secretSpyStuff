@@ -6,17 +6,25 @@ import java.time.LocalDate;
 public class Exercise1 {
     private static class Calendar {
         private static final String DAYS_SEPARATOR = "\t";
-        private final LocalDate today = LocalDate.now();
 
-        public void displayCalendar() {
-            displayHeader();
+        public static void displayCalendar() {
+            printHeader();
+            printDays(LocalDate.now());
+        }
 
-            LocalDate currentDay = LocalDate.of(today.getYear(), today.getMonth(), 1);
-            DayOfWeek startDayWeekday = currentDay.getDayOfWeek();
-            for (int i = 1; i <= startDayWeekday.getValue(); i++)
-                System.out.print(DAYS_SEPARATOR);
+        private static void printHeader() {
+            for (int i = 7; i != 0; i = (i + 1) % 7) {
+                System.out.print(DayOfWeek.of(i).toString().substring(0, 3) + " ");
+            }
+            System.out.println();
+        }
 
-            while (currentDay.getMonth() == today.getMonth()) {
+        private static void printDays(LocalDate date) {
+            final LocalDate monthStart = LocalDate.of(date.getYear(), date.getMonth(), 1);
+            printInitOffset(monthStart);
+
+            LocalDate currentDay = monthStart;
+            while (currentDay.getMonth() == date.getMonth()) {
                 if (currentDay.getDayOfWeek() == DayOfWeek.SUNDAY)
                     System.out.println();
 
@@ -25,11 +33,10 @@ public class Exercise1 {
             }
         }
 
-        private void displayHeader() {
-            for (int i = 7; i != 0; i = (i + 1) % 7) {
-                System.out.print(DayOfWeek.of(i).toString().substring(0, 3) + " ");
-            }
-            System.out.println();
+        private static void printInitOffset(LocalDate monthStart) {
+            DayOfWeek startDayWeekday = monthStart.getDayOfWeek();
+            for (int i = 1; i <= startDayWeekday.getValue(); i++)
+                System.out.print(DAYS_SEPARATOR);
         }
     }
 
