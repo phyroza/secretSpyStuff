@@ -1,6 +1,5 @@
 package com.tomslabs.exercises.chapter1;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Exercise7 {
