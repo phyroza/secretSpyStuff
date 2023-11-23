@@ -8,6 +8,6 @@ public class Exercise9 {
         Scanner sc = new Scanner(System.in);
         String w2 = sc.next();
 
-        System.out.println("Equals: " + Boolean.toString(w1.equals(w2)) + " Operator == " + Boolean.toString(w1 == w2));
+        System.out.println("Equals: " + w1.equals(w2) + " Operator == " + (w1 == w2));
     }
 }

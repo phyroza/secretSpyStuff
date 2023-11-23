@@ -15,7 +15,6 @@ public class Exercise12 {
                 case W -> new int[]{0, -1};
                 case N -> new int[]{1, 0};
                 case S -> new int[]{-1, 0};
-                default -> throw new IllegalArgumentException();
             };
 
             System.out.println("ints = {" + ints[0] + ", " + ints[1] + "}");

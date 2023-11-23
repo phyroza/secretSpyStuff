@@ -17,7 +17,6 @@ public class Exercise13 {
                 case W -> new int[]{0, -1};
                 case N -> new int[]{1, 0};
                 case S -> new int[]{-1, 0};
-                default -> throw new IllegalArgumentException();
             };
 
             x+=ints[0];
