@@ -23,7 +23,6 @@ public class Exercise9 {
         int minutesBetween = time2.minutesFrom(time1);
         System.out.println("minutesBetween t1 and t2 = " + minutesBetween);
 
-
         int minuteBetween2 = new TimeOfDay(23, 43).plusMinutes(1).minutesFrom(time1);
         System.out.println("minuteBetween2 = " + minuteBetween2);
     }
