@@ -5,7 +5,7 @@ public class Exercise21 {
         System.out.println(average(1,2,3,4));
 
         try {
-            average();
+            System.out.println(average());
         } catch (Exception e) {
             System.out.println("Should've provided the value. I caught this exception, others may not.");
         }

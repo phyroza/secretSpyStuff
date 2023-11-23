@@ -3,7 +3,7 @@ package com.tomslabs.exercises.chapter1;
 import java.util.Scanner;
 
 public class Exercise13 {
-    enum DIRECTION { N, S, E, W };
+    enum DIRECTION { N, S, E, W }
     static int x = 0;
     static int y = 0;
 
@@ -12,11 +12,12 @@ public class Exercise13 {
         while(true){
             String direction = scanner.next();
 
-            int[] ints = switch (Exercise12.DIRECTION.valueOf(direction)) {
+            int[] ints = switch (DIRECTION.valueOf(direction)) {
                 case E -> new int[]{0, 1};
                 case W -> new int[]{0, -1};
                 case N -> new int[]{1, 0};
                 case S -> new int[]{-1, 0};
+                default -> throw new IllegalArgumentException();
             };
 
             x+=ints[0];

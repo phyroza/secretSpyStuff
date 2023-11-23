@@ -3,7 +3,7 @@ package com.tomslabs.exercises.chapter1;
 import java.util.Scanner;
 
 public class Exercise12 {
-    enum DIRECTION { N, S, E, W };
+    enum DIRECTION { N, S, E, W }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -15,6 +15,7 @@ public class Exercise12 {
                 case W -> new int[]{0, -1};
                 case N -> new int[]{1, 0};
                 case S -> new int[]{-1, 0};
+                default -> throw new IllegalArgumentException();
             };
 
             System.out.println("ints = {" + ints[0] + ", " + ints[1] + "}");

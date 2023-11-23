@@ -8,12 +8,10 @@ public class Exercise14 {
 
         String fullName;
         switch (stringToCheck) {
-            case "lol" -> {
-                fullName = "Laughing out loud";
-            }
+            case "lol" -> fullName = "Laughing out loud";
             case "wut" -> fullName = "what";
             default -> fullName = "dunno man";
-        };
-        ;
+        }
+        System.out.println("fullName = " + fullName);
     }
 }
