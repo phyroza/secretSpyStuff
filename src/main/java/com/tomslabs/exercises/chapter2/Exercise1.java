@@ -1,46 +1,47 @@
 package com.tomslabs.exercises.chapter2;
 
+import java.io.PrintStream;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Exercise1 {
-    private static class Calendar {
+    private record Calendar(LocalDate date, PrintStream outStream) {
         private static final String DAYS_SEPARATOR = "\t";
 
-        public static void displayCalendar(LocalDate date) {
+        public void printCalendar() {
             printHeader();
-            printDays(date);
+            printDays();
         }
 
-        private static void printHeader() {
+        private void printHeader() {
             for (int i = 7; i != 0; i = (i + 1) % 7) {
-                System.out.print(DayOfWeek.of(i).toString().substring(0, 3) + " ");
+                outStream.print(DayOfWeek.of(i).toString().substring(0, 3) + " ");
             }
-            System.out.println();
+            outStream.println();
         }
 
-        private static void printDays(LocalDate date) {
+        private void printDays() {
             final LocalDate monthStart = LocalDate.of(date.getYear(), date.getMonth(), 1);
             printInitOffset(monthStart);
 
             LocalDate currentDay = monthStart;
             while (currentDay.getMonth() == date.getMonth()) {
                 if (currentDay.getDayOfWeek() == DayOfWeek.SUNDAY)
-                    System.out.println();
+                    outStream.println();
 
-                System.out.print(currentDay.getDayOfMonth() + DAYS_SEPARATOR);
+                outStream.print(currentDay.getDayOfMonth() + DAYS_SEPARATOR);
                 currentDay = currentDay.plusDays(1);
             }
         }
 
-        private static void printInitOffset(LocalDate monthStart) {
+        private void printInitOffset(LocalDate monthStart) {
             DayOfWeek startDayWeekday = monthStart.getDayOfWeek();
             for (int i = 1; i <= startDayWeekday.getValue(); i++)
-                System.out.print(DAYS_SEPARATOR);
+                outStream.print(DAYS_SEPARATOR);
         }
     }
 
     public static void main(String[] args) {
-        Calendar.displayCalendar(LocalDate.now());
+        new Calendar(LocalDate.now(), System.out).printCalendar();
     }
 }
