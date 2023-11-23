@@ -6,16 +6,16 @@ public class Exercise16
     {
         String l = """
                 "public class Exercise16",
-                "{",
-                "  public static void main(String[] args)",
-                "  {",
-                "    String l = \"\"\" fuckthis
+                {,
+                  public static void main(String[] args),
+                  {,
+                    String l = \"\"\" fuckthis
                 \"\"\"
-                "    ",
-                "    };",
-                "   System.out.println(l);
-                "  }",
-                "}",
+                    ,
+                    };,
+                   System.out.println(l);
+                  },
+                },
                 """;
         System.out.println(l);
     }
