@@ -9,7 +9,6 @@ public class Exercise17 {
         queue.addNode("wut");
         queue.addNode("tomato");
         queue.addNode("bird");
-
         System.out.println(queue);
 
         queue.removeFirstNode();
