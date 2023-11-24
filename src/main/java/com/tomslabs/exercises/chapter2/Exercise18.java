@@ -102,10 +102,6 @@ public class Exercise18 {
                 this.text = text;
             }
 
-            public void setText(String text) {
-                this.text = text;
-            }
-
             public void setNext(Node next) {
                 this.next = next;
             }
