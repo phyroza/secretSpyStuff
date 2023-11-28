@@ -1,10 +1,8 @@
 package com.tomslabs.exercises.chapter3;
 
-import com.tomslabs.exercises.chapter3.Measurable;
-
 public class Employee implements Measurable {
-    private String name;
-    private double salary;
+    private final String name;
+    private final double salary;
 
     public Employee(String name, double salary) {
         this.name = name;
