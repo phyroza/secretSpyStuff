@@ -5,19 +5,32 @@ public interface IntSequence {
 
     int next();
 
-    static IntSequence of(int... ints) {
+    static IntSequence constant(int constant) {
         return new IntSequence() {
-            private final int[] intsArray = ints;
-            int currentIndex = 0;
-
             @Override
             public boolean hasNext() {
-                return currentIndex < intsArray.length;
+                return true;
             }
 
             @Override
             public int next() {
-                int next = intsArray[currentIndex];
+                return constant;
+            }
+        };
+    }
+
+    static IntSequence of(int... ints) {
+        return new IntSequence() {
+            int currentIndex = 0;
+
+            @Override
+            public boolean hasNext() {
+                return currentIndex < ints.length;
+            }
+
+            @Override
+            public int next() {
+                int next = ints[currentIndex];
                 currentIndex++;
                 return next;
             }
