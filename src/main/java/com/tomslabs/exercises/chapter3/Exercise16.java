@@ -1,7 +1,5 @@
 package com.tomslabs.exercises.chapter3;
 
-import java.util.random.RandomGenerator;
-
 public class Exercise16 {
     public static void main(String[] args) {
         IntSequence randomInts = IntSequence.randomInts(0, 100);
