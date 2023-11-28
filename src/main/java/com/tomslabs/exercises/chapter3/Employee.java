@@ -14,6 +14,10 @@ public class Employee implements Measurable {
         return salary;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return String.format("%s with salary %.2f", name, salary);
