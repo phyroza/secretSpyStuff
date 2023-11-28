@@ -9,13 +9,4 @@ public class Exercise9 {
         new Thread(johnsGreeter).start();
         new Thread(janesGreeter).start();
     }
-
-    private record Greeter(String target, int n) implements Runnable {
-        @Override
-        public void run() {
-            for (int i = 0; i < n; ++i) {
-                System.out.printf("Hello, %s%n", target);
-            }
-        }
-    }
 }
