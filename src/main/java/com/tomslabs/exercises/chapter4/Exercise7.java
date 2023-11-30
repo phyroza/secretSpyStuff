@@ -10,7 +10,7 @@ public class Exercise7 {
 
         if (first instanceof Boolean firstBool) {
             if (second instanceof Boolean secondBool) {
-                if (firstBool && secondBool) {
+                if (firstBool || secondBool) {
                     return Boolean.TRUE;
                 }
             }
