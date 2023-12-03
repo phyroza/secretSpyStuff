@@ -24,7 +24,6 @@ public class Exercise5 {
 
             out.close();
             in.close();
-
         } catch (FileNotFoundException e) {
             if (in != null) in.close();
             throw new RuntimeException("Could not create file for output", e);
