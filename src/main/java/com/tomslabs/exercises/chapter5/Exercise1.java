@@ -3,7 +3,6 @@ package com.tomslabs.exercises.chapter5;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -20,13 +19,14 @@ public class Exercise1 {
 
     public static ArrayList<Double> readValues(String filename) throws IOException {
         ArrayList<Double> doubles = new ArrayList<>();
-        try (Scanner scanner = new Scanner(Paths.get(DATA_DIR + filename), StandardCharsets.UTF_8)) {
+        try (Scanner scanner = new Scanner(Paths.get(filename), StandardCharsets.UTF_8)) {
             while (scanner.hasNext()) {
                 try {
                     doubles.add(scanner.nextDouble());
                 } catch (InputMismatchException e) {
                     String value = scanner.next();
                     logger.log(WARNING, format("Could not read one of the values: {0}", value), e);
+//                    throw e;
                 }
             }
         } catch (IOException e) {
@@ -42,13 +42,11 @@ public class Exercise1 {
         });
 
         Scanner scanner = new Scanner(System.in);
-        String fileName = "doubleValues.txt";
-        Path path = Paths.get(DATA_DIR, fileName);
+        String fileName = DATA_DIR + "doubleValues.txt";
 
-        while (Files.exists(path)) {
+        while (Files.exists(Paths.get(fileName))) {
             System.out.println(readValues(fileName));
-            fileName = scanner.next();
-            path = Paths.get(DATA_DIR, fileName);
+            fileName = DATA_DIR + scanner.next();
         }
     }
 
