@@ -26,7 +26,7 @@ public class Exercise1 {
                 } catch (InputMismatchException e) {
                     String value = scanner.next();
                     logger.log(WARNING, format("Could not read one of the values: {0}", value), e);
-//                    throw e;
+                    throw e;
                 }
             }
         } catch (IOException e) {
