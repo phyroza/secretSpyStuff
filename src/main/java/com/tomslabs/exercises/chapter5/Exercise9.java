@@ -5,21 +5,21 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Exercise9 {
 
     public static void main(String[] args) {
-        try (secretWireRun run = secretWireRun.newRun("runA")) {
+        try (SecretWireRun run = SecretWireRun.newRun("runA")) {
             run.doStuff();
         }
     }
 
-    private record secretWireRun(String name) implements AutoCloseable {
+    private record SecretWireRun(String name) implements AutoCloseable {
         private final static ReentrantLock secretWireLock = new ReentrantLock();
 
-        private secretWireRun(String name) {
+        private SecretWireRun(String name) {
             this.name = name;
             secretWireLock.lock();
         }
 
-        public static secretWireRun newRun(String runName) {
-            return new secretWireRun(runName);
+        public static SecretWireRun newRun(String runName) {
+            return new SecretWireRun(runName);
         }
 
         void doStuff() {
