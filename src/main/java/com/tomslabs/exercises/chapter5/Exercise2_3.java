@@ -7,7 +7,7 @@ import static com.tomslabs.exercises.chapter5.Exercise1.DATA_DIR;
 
 public class Exercise2_3 {
     static double sumOfValues(String filename) throws IOException {
-        ArrayList<Double> doubles = null;
+        ArrayList<Double> doubles;
         doubles = Exercise1.readValues(filename);
         Double sum = 0.0;
         for (Double aDouble : doubles) {

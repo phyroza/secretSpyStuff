@@ -37,9 +37,7 @@ public class Exercise1 {
     }
 
     public static void main(String[] args) throws IOException {
-        Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
-            logger.log(ERROR, format("Uncaught exception: {0}", e));
-        });
+        Thread.setDefaultUncaughtExceptionHandler((t, e) -> logger.log(ERROR, format("Uncaught exception: {0}", e)));
 
         Scanner scanner = new Scanner(System.in);
         String fileName = DATA_DIR + "doubleValues.txt";
