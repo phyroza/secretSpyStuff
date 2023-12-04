@@ -3,7 +3,7 @@ package com.tomslabs.exercises.chapter6;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class Exercise3 {
+public class Exercise4 {
 
     public static void main(String[] args) {
         Table<String, Integer> table = new Table<>();
@@ -15,7 +15,7 @@ public class Exercise3 {
         System.out.println("table = " + table);
 
         Integer c = table.getKeyValue("c");
-        Table.Entry<String, Integer> bEntry = table.getEntry("b");
+        Table<String, Integer>.Entry<String, Integer> bEntry = table.getEntry("b");
         System.out.println(bEntry);
         table.removeKey("d");
         System.out.println("c value = " + c);
@@ -26,7 +26,7 @@ public class Exercise3 {
     private static class Table<K, V> {
         ArrayList<Entry<K, V>> list = new ArrayList<>();
 
-        private static class Entry<K, V> {
+        private class Entry<K, V> {
             K key;
             V value;
 
