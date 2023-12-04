@@ -8,19 +8,19 @@ import static java.lang.reflect.Array.newInstance;
 public class Exercise2 {
 
     public static void main(String[] args) {
-//        StackA<String> stackA = new StackA<>(String[]::new);
-//        System.out.println("stackA.isEmpty() = " + stackA.isEmpty());
-//        stackA.push("a");
-//        stackA.push("b");
-//        stackA.push("c");
-//        stackA.push("d");
-//        stackA.push("e");
-//        stackA.push("f");
-//        System.out.println("stackA.isEmpty() = " + stackA.isEmpty());
-//        System.out.println("stackA = " + stackA);
-//        String lastPopped = stackA.pop();
-//        System.out.println("lastPopped = " + lastPopped);
-//        System.out.println("stackA = " + stackA);
+        StackA<String> stackA = new StackA<>(String[]::new);
+        System.out.println("stackA.isEmpty() = " + stackA.isEmpty());
+        stackA.push("a");
+        stackA.push("b");
+        stackA.push("c");
+        stackA.push("d");
+        stackA.push("e");
+        stackA.push("f");
+        System.out.println("stackA.isEmpty() = " + stackA.isEmpty());
+        System.out.println("stackA = " + stackA);
+        String lastPopped = stackA.pop();
+        System.out.println("lastPopped = " + lastPopped);
+        System.out.println("stackA = " + stackA);
 
         StackB<String> stackB = new StackB<>(String.class);
         System.out.println("stackB.isEmpty() = " + stackB.isEmpty());
