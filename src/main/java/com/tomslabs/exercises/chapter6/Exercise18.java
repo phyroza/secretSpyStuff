@@ -1,6 +1,5 @@
 package com.tomslabs.exercises.chapter6;
 
-import java.util.Arrays;
 import java.util.BitSet;
 import java.util.HashMap;
 
@@ -17,10 +16,7 @@ public class Exercise18 {
 
         BitSet bitSet = new BitSet(NBITS);
         bitSet.set(0, NBITS, true);
-        bitSet.stream().forEach(i -> {
-            if (i > 1) bitSet.set(i - 1, i % 2 != 0);
-            System.out.println("settin bit index:" + i);
-        });
-        System.out.println("bitSet = " + bitSet);
+        bitSet.stream().forEach(i -> bitSet.set(i, i % 2 != 0));
+        System.out.println("bitSet = " + bitSet.toString());
     }
 }
