@@ -11,7 +11,7 @@ import java.util.TreeMap;
 
 import static java.lang.System.Logger.Level.ERROR;
 
-public class Exercise7 {
+public class Exercise9 {
 
     static TreeMap<String, Integer> wordsMap = new TreeMap<>(Comparator.comparing(String::length));
     private static final System.Logger logger = System.getLogger(Exercise7.class.getName());
@@ -22,6 +22,23 @@ public class Exercise7 {
             try (Scanner scanner = new Scanner(resource.openStream(), StandardCharsets.UTF_8)) {
                 while (scanner.hasNext()) {
                     String word = scanner.next();
+//                    wordsMap.merge(word, 1, Integer::sum);
+
+//                    if (wordsMap.containsKey(word)) {
+//                        wordsMap.put(word, wordsMap.get(word) + 1);
+//                    } else {
+//                        wordsMap.put(word, 1);
+//                    }
+
+//                    if (wordsMap.get(word) != null) {
+//                        wordsMap.put(word, wordsMap.get(word) + 1);
+//                    } else {
+//                        wordsMap.put(word, 1);
+//                    }
+
+//                    Integer count = wordsMap.getOrDefault(word, 0);
+//                    wordsMap.put(word, count + 1);
+
                     Integer previousValue = wordsMap.putIfAbsent(word, 1);
                     if (previousValue != null) {
                         wordsMap.computeIfPresent(word, (s, v) -> v + 1);
