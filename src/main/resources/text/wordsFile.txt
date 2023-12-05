@@ -1,0 +1,1804 @@
+Skip to content
+geeksforgeeks
+Courses
+Tutorials
+Jobs
+Practice
+Contests
+
+
+Sign In
+Sign In
+Home
+Saved Videos
+Courses
+Data Structures and Algorithms
+ML & Data Science
+Web Development
+Languages
+Interview Corner
+CS Subjects
+Jobs
+Practice
+Contests
+GBlog
+Puzzles
+What's New ?
+ Change Language
+
+Java Arrays
+Java Strings
+Java OOPs
+Java Collection
+Java 8 Tutorial
+Java Multithreading
+Java Exception Handling
+Java Programs
+Java Project
+Java Collections Interview
+Java Interview Questions
+Java MCQs
+Spring
+Spring MVC
+Spring Boot
+Hibernate
+
+Related Articles
+Explore Our Geeks Community
+transient keyword in Java
+List of all Java Keywords
+Super Keyword in Java
+var keyword in Java
+super keyword for Method Overloading in Java
+Important Keywords in Java
+final variables in Java
+Usage of Enum and Switch Keyword in Java
+Usage of Break keyword in Java
+static Keyword in Java
+Difference between volatile and transient keywords in Java
+Access Modifiers in Java
+return keyword in Java
+strictfp keyword in java
+final Keyword in Java
+Protected vs Final Access Modifier in Java
+Difference Between Atomic, Volatile and Synchronized in Java
+How to call private method from another class in Java with help of Reflection API?
+Using the super Keyword to Call a Base Class Constructor in Java
+Explore Our Geeks Community
+transient keyword in Java
+List of all Java Keywords
+Super Keyword in Java
+var keyword in Java
+super keyword for Method Overloading in Java
+Important Keywords in Java
+final variables in Java
+Usage of Enum and Switch Keyword in Java
+Usage of Break keyword in Java
+static Keyword in Java
+Difference between volatile and transient keywords in Java
+Access Modifiers in Java
+return keyword in Java
+strictfp keyword in java
+final Keyword in Java
+Protected vs Final Access Modifier in Java
+Difference Between Atomic, Volatile and Synchronized in Java
+How to call private method from another class in Java with help of Reflection API?
+Using the super Keyword to Call a Base Class Constructor in Java
+Protected Keyword in Java with Examples
+Read
+Discuss
+Practice
+Access modifiers in Java help to restrict the scope of a class, constructor, variable, method, or data member. There are four types of access modifiers available in java. The access of various modifiers can be seen in the following table below as follows:
+
+Difference Between Access Modifiers
+
+The protected keyword in Java refers to one of its access modifiers. The methods or data members declared as protected can be accessed from
+
+Within the same class.
+Subclasses of the same packages.
+Different classes of the same packages.
+Subclasses of different packages.
+There are some certain important points to be remembered as follows:
+
+
+If one wishes to access a protected modifier outside a package, then inheritance is needed to be applied.
+Protecting a constructor prevents the users from creating the instance of the class, outside the package.
+During overriding, when a variable or method is protected, it can be overridden to other subclass using either a public or protected modifier only.
+Outer class and interface cannot be protected.
+Implementation: Here we will be creating two packages p1 and p2. Class A in p1 is made public, to access it in p2. The method displayed in class A is protected and class B is inherited from class A and this protected method is then accessed by creating an object of class B.
+
+Example 1: Package p1
+
+// Java program to illustrate
+// protected modifier
+
+package p1;
+
+// Class A
+public class A {
+    protected void display()
+    {
+        System.out.println("GeeksforGeeks");
+    }
+}
+
+Package p2
+
+// Java program to illustrate
+// protected modifier
+
+package p2;
+
+// import all classes in package p1
+import p1.*;
+
+// Class B is a subclass of A
+class B extends A {
+    public static void main(String args[])
+    {
+        B obj = new B();
+        obj.display();
+    }
+}
+Output:
+
+GeeksforGeeks
+Now let us try to analyze different conditions of access:
+
+Calling protected function without extending the parent class
+Accessing a protected class
+Accessing display function from the same package but different
+Accessing display function from a different package
+Accessing a protected class by overriding to sub-class within the same package
+A. Calling Protected Function Without Extending the Parent Class
+Here we will create two packages p1 and p2. Class A in p1 is made public, to access it in p2. The method displayed in class A is protected. But the code will not be able to access the function “display” since the child class has not inherited its value from the main class and will throw an exception as shown.
+
+Example 1-A: Package p1
+
+// Java program to illustrate Protected Modifier
+
+package p1;
+
+// Class A
+public class A {
+
+    // Method
+    protected void display()
+    {
+        // Print statement
+        System.out.println("GeeksforGeeks");
+    }
+}
+Example 1-B: Package p2
+
+
+
+// Java program to illustrate
+// protected modifier
+
+package p2;
+
+// import all classes in package p1
+import p1.*;
+
+// Class B is a subclass of A
+class B {
+    public static void main(String args[])
+    {
+        B obj = new B();
+        obj.display();
+    }
+}
+Output:
+
+Exception in thread "main"
+java.lang.RuntimeException:
+Uncompilable source code -
+Erroneous sym type: p2.B.display
+    at p2.B.main(B.java:16)
+B: Accessing a Protected Class
+Here we are trying to access a protected class A resulting in an error.
+
+Example A:
+
+// Java program to illustrate
+// protected modifier
+
+package p1;
+
+// Class A
+protected class A {
+    void display()
+    {
+        System.out.println("GeeksforGeeks");
+    }
+}
+Example B: Package p2
+
+// Java program to illustrate
+// protected modifier
+
+package p2;
+
+// import all classes in package p1
+import p1.*;
+
+// Class B is a subclass of A
+class B extends A {
+    public static void main(String args[])
+    {
+        B obj = new B();
+        obj.display();
+    }
+}
+Output: This will throw an error
+
+Exception in thread "main"
+java.lang.RuntimeException:
+Uncompilable source code -
+Erroneous sym type: p2.B.display
+    at p2.B.main(B.java:16)
+C: Accessing Display Function From the Same Package But Different Class
+Implementation: In this example, we have access to access a protected function “display” from the same package but a different class
+
+Example A: Package p1
+
+// Java program to illustrate
+// protected modifier
+
+package p1;
+
+// Class A
+public class A {
+    protected void display()
+    {
+        System.out.println("GeeksforGeeks");
+    }
+}
+Example B: class C
+
+// Java program to illustrate
+// protected modifier
+
+// Class C is a subclass of A
+public class C {
+    public static void main(String args[])
+    {
+        A obj = new A();
+        obj.display();
+    }
+}
+Output:
+
+GeeksforGeeks
+D: Accessing Display Function From a Different Package
+Here we have tried to access the protected function display from a different package by inheritance and extending the class.
+
+Example A: Package p1
+
+// Java program to illustrate
+// protected modifier
+
+package p1;
+
+// Class A
+public class A {
+    protected void display()
+    {
+        System.out.println("GeeksforGeeks");
+    }
+}
+Example B: Package p2
+
+// Java program to illustrate
+// protected modifier
+
+package p2;
+
+// import all classes in package p1
+import p1.*;
+
+// Class B is a subclass of A
+class B extends A {
+    public static void main(String args[])
+    {
+        B obj = new B();
+        obj.display();
+    }
+}
+Output:
+
+GeeksforGeeks
+E: Accessing a Protected Class by Overriding to Sub-Class Within the Same Package
+Here we have designed two classes A and C, where class C is the overridden one.
+
+Example A: class A
+
+// Java program to illustrate
+// protected modifier
+package p1;
+
+// Class A
+public class A {
+    protected void display()
+    {
+        System.out.println("Class A");
+    }
+}
+Example B: class C
+
+// Java program to illustrate
+// protected modifier
+
+public class C extends A {
+
+    // overridden function
+    protected void display()
+    {
+        System.out.println("Class C");
+    }
+    public static void main(String args[])
+    {
+        C obj1 = new C();
+        obj1.display();
+    }
+}
+Output:
+
+Class C
+
+Whether you're preparing for your first job interview or aiming to upskill in this ever-evolving tech landscape, GeeksforGeeks Courses are your key to success. We provide top-quality content at affordable prices, all geared towards accelerating your growth in a time-bound manner. Join the millions we've already empowered, and we're here to do the same for you. Don't miss out - check it out now!
+
+Last Updated : 01 May, 2022
+
+15
+
+Similar Reads
+Similar read thumbnail
+Public vs Protected in C++ with Examples
+Similar read thumbnail
+Accessing Protected Members in Java
+Similar read thumbnail
+Create Password Protected Zip File in Java
+Similar read thumbnail
+Public vs Protected Access Modifier in Java
+Similar read thumbnail
+Protected vs Package Access Modifiers in Java
+Similar read thumbnail
+Public vs Protected vs Package vs Private Access Modifier in Java
+Similar read thumbnail
+Protected vs Private Access Modifiers in Java
+Similar read thumbnail
+Private vs Protected vs Final Access Modifier in Java
+Similar read thumbnail
+Protected vs Final Access Modifier in Java
+Similar read thumbnail
+How to Read Data from Password Protected Excel using Java and Apache POI?
+Related Tutorials
+Similar read thumbnail
+Java AWT Tutorial
+Similar read thumbnail
+Spring MVC Tutorial
+Similar read thumbnail
+Spring Tutorial
+Similar read thumbnail
+Spring Boot Tutorial
+Similar read thumbnail
+Java 8 Features - Complete Tutorial
+Previous
+Using the super Keyword to Call a Base Class Constructor in Java
+Next
+System.out.println in Java
+Article Contributed By :
+C
+
+Chinmoy Lenka
+Chinmoy Lenka
+Vote for difficulty
+Current difficulty : Medium
+Easy
+Normal
+Medium
+Hard
+Expert
+Improved By :
+solankimayank
+Article Tags :
+access modifiers
+Java-keyword
+Java
+Practice Tags :
+Java
+Improve Article
+Report Issue
+Recently Published
+article-card
+How to Choose the Right Backend Technology?
+Read
+article-card
+GeeksforGeeks Black Friday Sale 2023: Grab Exciting Deals and Level Up Now!!
+Read
+article-card
+Top 10 Docker Alternatives For Software Developers
+Read
+article-card
+JEE Entrance Exam Preparation Experience from PhysicsWallah & Allen
+Read
+article-card
+A Day in the Life of a Data Scientist
+Read
+article-card
+Python For DevOps:  A Complete Guide For Beginners
+Read
+article-card
+What is DevOps?
+Read
+article-card
+Fix Error 1061: The Service Cannot Accept Control Messages
+Read
+article-card
+Google launches new ‘Material You’ based Chrome Web Store
+Read
+
+
+
+
+geeksforgeeks-footer-logo
+A-143, 9th Floor, Sovereign Corporate Tower, Sector-136, Noida, Uttar Pradesh - 201305
+feedback@geeksforgeeks.org
+GFG App on Play Store
+GFG App on App Store
+Company
+About Us
+Legal
+Careers
+In Media
+Contact Us
+Advertise with us
+GFG Corporate Solution
+Placement Training Program
+Apply for Mentor
+Explore
+Job-A-Thon Hiring Challenge
+Hack-A-Thon
+GfG Weekly Contest
+Offline Classes (Delhi/NCR)
+DSA in JAVA/C++
+Master System Design
+Master CP
+GeeksforGeeks Videos
+Languages
+Python
+Java
+C++
+PHP
+GoLang
+SQL
+R Language
+Android Tutorial
+DSA
+Data Structures
+Algorithms
+DSA for Beginners
+Basic DSA Coding Problems
+Complete Roadmap To Learn DSA
+Top 100 DSA Interview Problems
+DSA Roadmap by Sandeep Jain
+All Cheat Sheets
+Dynamic Programming
+Tutorials
+DSA
+System Design
+Software Development
+Product Management
+SAP
+SEO
+Design Patterns
+Web Development
+HTML
+CSS
+JavaScript
+Bootstrap
+ReactJS
+AngularJS
+NodeJS
+Express.js
+Lodash
+Web Design
+Computer Science
+GATE CS Notes
+Operating Systems
+Computer Network
+Database Management System
+Software Engineering
+Digital Logic Design
+Engineering Maths
+Python
+Python Programming Examples
+Django Tutorial
+Python Projects
+Python Tkinter
+OpenCV Python Tutorial
+Python Interview Question
+Data Science & ML
+Data Science With Python
+Data Science For Beginner
+Machine Learning Tutorial
+Maths For Machine Learning
+Pandas Tutorial
+NumPy Tutorial
+NLP Tutorial
+Deep Learning Tutorial
+DevOps
+Git
+AWS
+Docker
+Kubernetes
+Azure
+GCP
+Competitive Programming
+Top DS or Algo for CP
+Top 50 Tree
+Top 50 Graph
+Top 50 Array
+Top 50 String
+Top 50 DP
+Top 15 Websites for CP
+System Design
+What is System Design
+Monolithic and Distributed SD
+High Level Design or HLD
+Low Level Design or LLD
+Crack System Design Round
+System Design Interview Questions
+Grokking Modern System Design
+Interview Corner
+Company Wise Preparation
+Preparation for SDE
+Experienced Interviews
+Internship Interviews
+Competitive Programming
+Aptitude Preparation
+Puzzles
+GfG School
+CBSE Notes for Class 8
+CBSE Notes for Class 9
+CBSE Notes for Class 10
+CBSE Notes for Class 11
+CBSE Notes for Class 12
+English Grammar
+Commerce
+Accountancy
+Business Studies
+Economics
+Human Resource Management (HRM)
+Management
+Income Tax
+Finance
+Statistics for Economics
+UPSC
+Polity Notes
+Geography Notes
+History Notes
+Science and Technology Notes
+Economics Notes
+Important Topics in Ethics
+UPSC Previous Year Papers
+SSC/ BANKING
+SSC CGL Syllabus
+SBI PO Syllabus
+SBI Clerk Syllabus
+IBPS PO Syllabus
+IBPS Clerk Syllabus
+Aptitude Questions
+SSC CGL Practice Papers
+Write & Earn
+Write an Article
+Improve an Article
+Pick Topics to Write
+Share your Experiences
+Internships
+@GeeksforGeeks, Sanchhaya Education Private Limited, All rights reserved
+We use cookies to ensure you have the best browsing experience on our website. By using our site, you acknowledge that you have read and understood our Cookie Policy & Privacy Policy
+Got It !
+Lightbox
+
+HIDE AD
+PrivacyPrivacy
+Logo
+Spring Boot
+Java 11
+Java 17
+Java IO Tutorial
+Home
+File Create & Write
+File Read
+File Append
+File Delete
+File Copy
+File Rename Move
+File Find
+File Path
+File Transfer
+File Exists
+File Size
+Directory Create
+Directory Delete
+Directory Copy
+Directory Size
+Directory Walk (Files.walk)
+Temp File Create
+Temp File Write
+Temp File Delete
+Temp File FilePath
+Serialization and Deserialization
+HowTo - Working Directory
+HowTo - Read File from Resources
+HowTo - Get JAR path
+HowTo - Zip File
+HowTo - UnZip File
+HowTo - Compress Gzip file
+HowTo - Decompress Gzip file
+HowTo - Tar Gzip, tar.gz
+HowTo - File Separator
+HowTo - Count Lines
+HowTo - New Line
+HowTo - Get File Extension
+HowTo - Get File Creation Date
+HowTo - Get File Last Modified
+HowTo - Update Last Modified
+HowTo - Format FileTime
+HowTo - Move File To Directory
+HowTo - Remote Shell Script
+HowTo - UTF-8 Read
+HowTo - UTF-8 Write
+HowTo - File to Path
+HowTo - File to byte[]
+HowTo - File to Hex
+HowTo - File to String
+HowTo - String to File
+HowTo - byte[] to String
+HowTo - byte[] to File
+HowTo - byte[] to Object
+HowTo - Image Read Write
+HowTo - Image Resize
+HowTo - Read CSV File
+HowTo - Write CSV File
+HowTo - Find File By Extension
+HowTo - InputStream to BufferedReader
+HowTo - InputStream to File
+HowTo - String to InputStream
+HowTo - FileInputStream
+
+freestar
+Java – Read a file from resources folder
+author image
+By mkyong | Updated: September 4, 2020
+Tags: jar java java.io java.nio read file resources
+Java resources folder
+In Java, we can use getResourceAsStream or getResource to read a file or multiple files from a resources folder or root of the classpath.
+
+The getResourceAsStream method returns an InputStream.
+
+
+  // the stream holding the file content
+  InputStream is = getClass().getClassLoader().getResourceAsStream("file.txt");
+
+  // for static access, uses the class name directly
+  InputStream is = JavaClassName.class.getClassLoader().getResourceAsStream("file.txt");
+
+The getResource method returns an URL and normally convert it to a File; Not working in JAR file.
+
+
+  // get the file url, not working in JAR file.
+  URL resource = getClass().getClassLoader().getResource("file.txt");
+  if (resource == null) {
+      throw new IllegalArgumentException("file not found!");
+  } else {
+
+      // failed if files have whitespaces or special characters
+      //return new File(resource.getFile());
+
+      return new File(resource.toURI());
+  }
+
+  // for static access
+  // URL resource = JavaClassName.class.getClassLoader().getResource("fileName");
+
+
+
+
+1. Files in resources folder
+1.1 Review the files in the src/main/resources, later we will access the files and print out the file content.
+
+project structure
+src/main/resources/database.properties
+
+datasource.url=jdbc:mysql://localhost/mkyong?useSSL=false
+datasource.username=root
+datasource.password=password
+datasource.driver-class-name=com.mysql.jdbc.Driver
+
+src/main/resources/json/file1.json
+
+{
+  "name": "mkyong",
+  "age": 38
+}
+
+src/main/resources/json/file2.json
+
+{
+  "name": "jack",
+  "age": 40
+}
+
+src/main/resources/json/sub/subfile1.json
+
+{
+  "name": "sub",
+  "age": 99
+}
+
+1.2 By default, build tools like Maven, Gradle, or common Java practice will copy all files from src/main/resources to the root of target/classes or build/classes. So, when we try to read a file from src/main/resources, we read the file from the root of the project classpath.
+
+copy resources to classes
+1.3 Below is a JAR file structure. Usually, the files in the resources folder will copy to the root of the classpath.
+
+Terminal
+
+$ jar -tf target/example.jar
+
+META-INF/MANIFEST.MF
+META-INF/
+json/
+json/sub/
+json/file2.json
+json/sub/subfile1.json
+json/file1.json
+database.properties
+com/
+com/mkyong/
+com/mkyong/io/
+com/mkyong/io/utils/
+//...
+
+2. Get a file from the resources folder.
+2.1 The below example demonstrates the use of getResourceAsStream and getResource methods to read a file json/file1.json from the resources folder and print out the file content.
+
+Note
+
+The getResource method is not working in the JAR file.
+The getResourceAsStream method works everywhere.
+FileResourcesUtils.java
+
+package com.mkyong.io.utils;
+
+import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.List;
+
+public class FileResourcesUtils {
+
+    public static void main(String[] args) throws IOException {
+
+        FileResourcesUtils app = new FileResourcesUtils();
+
+        //String fileName = "database.properties";
+        String fileName = "json/file1.json";
+
+        System.out.println("getResourceAsStream : " + fileName);
+        InputStream is = app.getFileFromResourceAsStream(fileName);
+        printInputStream(is);
+
+        System.out.println("\ngetResource : " + fileName);
+        File file = app.getFileFromResource(fileName);
+        printFile(file);
+
+    }
+
+    // get a file from the resources folder
+    // works everywhere, IDEA, unit test and JAR file.
+    private InputStream getFileFromResourceAsStream(String fileName) {
+
+        // The class loader that loaded the class
+        ClassLoader classLoader = getClass().getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(fileName);
+
+        // the stream holding the file content
+        if (inputStream == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        } else {
+            return inputStream;
+        }
+
+    }
+
+    /*
+        The resource URL is not working in the JAR
+        If we try to access a file that is inside a JAR,
+        It throws NoSuchFileException (linux), InvalidPathException (Windows)
+
+        Resource URL Sample: file:java-io.jar!/json/file1.json
+     */
+    private File getFileFromResource(String fileName) throws URISyntaxException{
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL resource = classLoader.getResource(fileName);
+        if (resource == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        } else {
+
+            // failed if files have whitespaces or special characters
+            //return new File(resource.getFile());
+
+            return new File(resource.toURI());
+        }
+
+    }
+
+    // print input stream
+    private static void printInputStream(InputStream is) {
+
+        try (InputStreamReader streamReader =
+                    new InputStreamReader(is, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(streamReader)) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    // print a file
+    private static void printFile(File file) {
+
+        List<String> lines;
+        try {
+            lines = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+            lines.forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+}
+
+Output
+
+Terminal
+
+getResourceAsStream : json/file1.json
+{
+  "name": "mkyong",
+  "age": 38
+}
+
+getResource : json/file1.json
+{
+  "name": "mkyong",
+  "age": 38
+}
+
+2.2 Now, we pack the project into a JAR file and run it; this time, the getResource will fail and returns either NoSuchFileException or InvalidPathException. We cannot read the files inside the JAR file via the resource URL.
+
+Run the JAR file on Linux (Ubuntu), it throws NoSuchFileException.
+
+Terminal
+
+$ mvn clean package
+
+$ java -jar target/java-io.jar
+
+getResourceAsStream : json/file1.json
+{
+  "name": "mkyong",
+  "age": 38
+}
+
+# for new File(resource.getFile());
+getResource : json/file1.json
+java.nio.file.NoSuchFileException: file:/home/mkyong/projects/core-java/java-io/target/java-io.jar!/json/file1.json
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:155)
+	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2838)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3329)
+	at com.mkyong.io.utils.FileResourcesUtils.printFile(FileResourcesUtils.java:135)
+	at com.mkyong.io.utils.FileResourcesUtils.main(FileResourcesUtils.java:24)
+
+# for new File(resource.toURI());
+getResource : json/file1.json
+Exception in thread "main" java.lang.IllegalArgumentException: URI is not hierarchical
+	at java.base/java.io.File.<init>(File.java:420)
+	at com.mkyong.io.utils.FileResourcesUtils.getFileFromResource(FileResourcesUtils.java:112)
+	at com.mkyong.io.utils.FileResourcesUtils.main(FileResourcesUtils.java:29)
+
+
+Run the JAR file on Windows, it throws InvalidPathException.
+
+Terminal
+
+$ mvn clean package
+
+$ java -jar target/java-io.jar
+
+getResourceAsStream : json/file1.json
+{
+  "name": "mkyong",
+  "age": 38
+}
+
+getResource : json/file1.json
+Exception in thread "main" java.nio.file.InvalidPathException:
+        Illegal char <:> at index 4: file:\C:\Users\mkyong\projects\core-java\java-io\target\java-io.jar!\json\file1.json
+
+        at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+        at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+        at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+        at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+        at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+        at java.base/java.io.File.toPath(File.java:2290)
+        at com.mkyong.io.utils.FileResourcesUtils.printFile(FileResourcesUtils.java:166)
+        at com.mkyong.io.utils.FileResourcesUtils.main(FileResourcesUtils.java:32)
+
+P.S This example uses the Maven plugin maven-jar-plugin to create the JAR file.
+
+pom.xml
+
+  <!-- Make this jar executable -->
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.2.0</version>
+      <configuration>
+          <archive>
+              <manifest>
+                  <addClasspath>true</addClasspath>
+                  <mainClass>com.mkyong.io.utils.FileResourcesUtils</mainClass>
+              </manifest>
+          </archive>
+      </configuration>
+  </plugin>
+
+3. Get a file from the resources folder – Unit Test
+3.1 We put the test resources at folder src/test/resources for unit tests. Usually, the files in test resources will copy to the target/test-classes folder.
+
+resources for unit tests
+src/test/resources/json/file1.json
+
+{
+  "name": "unit test",
+  "age": 38
+}
+
+src/test/resources/database.properties
+
+datasource.url=jdbc:mysql://localhost/test?useSSL=false
+datasource.username=test
+datasource.password=password
+datasource.driver-class-name=com.mysql.jdbc.Driver
+
+3.2 It works the same way we read the file from src/main/resources. We use the same getResourceAsStream and getResource methods to read the file from the src/test/resources.
+
+FileResourcesTest.java
+
+package com.mkyong.io;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.List;
+
+// Unit test class
+public class FileResourcesTest {
+
+    @DisplayName("Test loading a JSON file")
+    @Test
+    void loadJSONTest() {
+
+        String fileName = "json/file1.json";
+
+        ClassLoader classLoader = getClass().getClassLoader();
+
+        try (InputStream inputStream = classLoader.getResourceAsStream(fileName);
+             InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(streamReader)) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @DisplayName("Test loading a properties file")
+    @Test
+    void loadPropTest() throws IOException, URISyntaxException {
+
+        String fileName = "database.properties";
+
+        ClassLoader classLoader = getClass().getClassLoader();
+
+        URL resource = classLoader.getResource(fileName);
+        if (resource == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        }
+
+        //File file = new File(resource.getFile());
+        File file = new File(resource.toURI());
+
+        List<String> lines = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+        lines.forEach(System.out::println);
+
+    }
+
+}
+
+Output
+
+Terminal
+
+{
+  "name": "unit test",
+  "age": 38
+}
+
+datasource.url=jdbc:mysql://localhost/test?useSSL=false
+datasource.username=test
+datasource.password=password
+datasource.driver-class-name=com.mysql.jdbc.Driver
+
+4. Get all files from a resource folder. (NON-JAR environment)
+If we don’t know the exact filename and want to read all files, including sub-folder files from a resources folder, we can use the NIO Files.walk to easily access and read the files.
+
+4.1 The below example uses Files.walk to read all files from a folder src/main/resources/json:
+
+FileResourcesUtils.java
+
+package com.mkyong.io.utils;
+
+import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FileResourcesUtils {
+
+    public static void main(String[] args) throws IOException {
+
+        FileResourcesUtils app = new FileResourcesUtils();
+
+        // read all files from a resources folder
+        try {
+
+            // files from src/main/resources/json
+            List<File> result = app.getAllFilesFromResource("json");
+            for (File file : result) {
+                System.out.println("file : " + file);
+                printFile(file);
+            }
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private List<File> getAllFilesFromResource(String folder)
+        throws URISyntaxException, IOException {
+
+        ClassLoader classLoader = getClass().getClassLoader();
+
+        URL resource = classLoader.getResource(folder);
+
+        // dun walk the root path, we will walk all the classes
+        List<File> collect = Files.walk(Paths.get(resource.toURI()))
+                .filter(Files::isRegularFile)
+                .map(x -> x.toFile())
+                .collect(Collectors.toList());
+
+        return collect;
+    }
+
+    // print a file
+    private static void printFile(File file) {
+
+        List<String> lines;
+        try {
+            lines = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+            lines.forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+}
+
+Output
+
+Terminal
+
+file : /home/mkyong/projects/core-java/java-io/target/classes/json/file1.json
+{
+"name": "mkyong",
+"age": 38
+}
+
+file : /home/mkyong/projects/core-java/java-io/target/classes/json/file2.json
+{
+"name": "jack",
+"age": 40
+}
+
+file : /home/mkyong/projects/core-java/java-io/target/classes/json/sub/subfile1.json
+{
+"name": "sub",
+"age": 99
+}
+
+4.2 However, the standard Files.walk in example 4.1 can’t access the files in the JAR file directly, try run the example 4.1 in a JAR environment, and it throws FileSystemNotFoundException.
+
+Terminal
+
+$ mvn clean package
+
+$ java -jar target/java-io.jar
+Exception in thread "main" java.nio.file.FileSystemNotFoundException
+        at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.getFileSystem(ZipFileSystemProvider.java:169)
+        at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.getPath(ZipFileSystemProvider.java:155)
+        at java.base/java.nio.file.Path.of(Path.java:208)
+        at java.base/java.nio.file.Paths.get(Paths.java:97)
+        at com.mkyong.io.utils.FileResourcesUtils.getAllFilesFromResource(FileResourcesUtils.java:128)
+        at com.mkyong.io.utils.FileResourcesUtils.main(FileResourcesUtils.java:35)
+
+5. Get all files from a resource folder. (JAR version)
+5.1 This example shows how to Files.walk a folder inside a JAR file via FileSystems and URI jar:file:xxx.jar.
+
+The idea is:
+
+File walks the folder inside a JAR file using FileSystems, and get all the filename, see getPathsFromResourceJAR()
+Loop all the filename, access and print each file like example 2.1, see getFileFromResourceAsStream().
+FileResourcesUtils.java
+
+package com.mkyong.io.utils;
+
+import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FileResourcesUtils {
+
+    public static void main(String[] args) throws IOException {
+
+        FileResourcesUtils app = new FileResourcesUtils();
+
+        // Sample 3 - read all files from a resources folder (JAR version)
+        try {
+
+            // get paths from src/main/resources/json
+            List<Path> result = app.getPathsFromResourceJAR("json");
+            for (Path path : result) {
+                System.out.println("Path : " + path);
+
+                String filePathInJAR = path.toString();
+                // Windows will returns /json/file1.json, cut the first /
+                // the correct path should be json/file1.json
+                if (filePathInJAR.startsWith("/")) {
+                    filePathInJAR = filePathInJAR.substring(1, filePathInJAR.length());
+                }
+
+                System.out.println("filePathInJAR : " + filePathInJAR);
+
+                // read a file from resource folder
+                InputStream is = app.getFileFromResourceAsStream(filePathInJAR);
+                printInputStream(is);
+            }
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    // get a file from the resources folder
+    // works everywhere, IDEA, unit test and JAR file.
+    private InputStream getFileFromResourceAsStream(String fileName) {
+
+        // The class loader that loaded the class
+        ClassLoader classLoader = getClass().getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(fileName);
+
+        // the stream holding the file content
+        if (inputStream == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        } else {
+            return inputStream;
+        }
+
+    }
+
+    // Get all paths from a folder that inside the JAR file
+    private List<Path> getPathsFromResourceJAR(String folder)
+        throws URISyntaxException, IOException {
+
+        List<Path> result;
+
+        // get path of the current running JAR
+        String jarPath = getClass().getProtectionDomain()
+                .getCodeSource()
+                .getLocation()
+                .toURI()
+                .getPath();
+        System.out.println("JAR Path :" + jarPath);
+
+        // file walks JAR
+        URI uri = URI.create("jar:file:" + jarPath);
+        try (FileSystem fs = FileSystems.newFileSystem(uri, Collections.emptyMap())) {
+            result = Files.walk(fs.getPath(folder))
+                    .filter(Files::isRegularFile)
+                    .collect(Collectors.toList());
+        }
+
+        return result;
+
+    }
+
+    // print input stream
+    private static void printInputStream(InputStream is) {
+
+        try (InputStreamReader streamReader = new InputStreamReader(is, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(streamReader)) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+}
+
+Output
+
+Terminal
+
+$ java -jar target/java-io.jar
+
+JAR Path :/C:/Users/mkyong/projects/core-java/java-io/target/java-io.jar
+
+Path : /json/file2.json
+filePathInJAR : json/file2.json
+{
+  "name": "jack",
+  "age": 40
+}
+
+Path : /json/file1.json
+filePathInJAR : json/file1.json
+{
+  "name": "mkyong",
+  "age": 38
+}
+
+Path : /json/sub/subfile1.json
+filePathInJAR : json/sub/subfile1.json
+{
+  "name": "sub",
+  "age": 99
+}
+
+Download Source Code
+$ git clone https://github.com/mkyong/core-java
+
+$ cd java-io
+
+References
+Files.walk JavaDoc
+CodeSource JavaDoc
+RFC 2396 – Syntax and format of a URI
+Maven – Create JAR file
+Zip File System Provider
+Java Files.walk examples
+Java – Get the path of a running JAR file
+Related Articles
+How to delete a temporary file in Java
+How to write data to a temporary file in Java
+How to read file in Java - BufferedReader
+How to read a UTF-8 file in Java
+How to check if a file exists in Java
+Java - How to convert File to byte[]
+Java - Count number of lines in a file
+How to get file size in Java
+How to copy file in Java
+How to get file creation date in Java
+About Author
+author image
+mkyong
+Founder of Mkyong.com, love Java and open source stuff. Follow him on Twitter. If you like my tutorials, consider make a donation to these charities.
+Comments
+3000
+Join the discussion
+58 COMMENTS
+Most Voted
+Jack Nolddor
+7 years ago
+How about reading al files under a resources directory like this?
+
+src/main/resources
++ file1.txt
++ file2.txt
+…
++ file9.txt
+
+17
+ Reply
+mkyong
+3 years ago
+Reply to  Jack Nolddor
+We updated the article, see example 4 and 5. Files.walk is your best friend.
+
+0
+ Reply
+Alex
+2 years ago
+Reply to  mkyong
+And still, examples 4 and 5 shows how to access files in subfolder of resource folder, but not in resource folder itself.
+
+1
+ Reply
+alikemal ocalan
+7 years ago
+Hi mkyong.This work fine ide but not work jar?
+Can you help we ?
+
+7
+ Reply
+mkyong
+3 years ago
+Reply to  alikemal ocalan
+We updated the example to access the files inside the JAR file, the answer is getResourceAsStream.
+
+The getResource is not working in JAR file.
+The getResourceAsStream works everywhere.
+
+4
+ Reply
+name
+5 years ago
+Reply to  alikemal ocalan
+ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+InputStream inputStream = classLoader.getResourceAsStream(“fileName”);
+StringWriter writer = new StringWriter();
+IOUtils.copy(inputStream, writer);
+query = writer.toString();
+
+3
+ Reply
+karthi chandran
+3 years ago
+Reply to  name
+i am added Apache commons in mvn pom.xml then what is the query means
+
+0
+ Reply
+robben09
+5 years ago
+Reply to  name
+^ Thanks a lot man!
+
+1
+ Reply
+Grzegorz Solecki
+9 years ago
+There is also one that I like the most:
+File file = ResourceUtils.getFile(“classpath:file/test.txt”)
+String txt= FileUtils.readFileToString(file);
+
+ResourceUtils are in spring and FileUtils are in commons io.
+
+4
+ Reply
+Khue Nguyen
+7 years ago
+Reply to  Grzegorz Solecki
+OMG, many thanks for this ^^
+
+0
+ Reply
+mkyong
+8 years ago
+Reply to  Grzegorz Solecki
+Thanks for sharing this – ResourceUtils
+
+1
+ Reply
+Charlie
+9 months ago
+Example 5 does not work on macOS.
+
+I need to read a collection of json files from src/main/resources/specifications directory within the Jar context (they are classes/specificaitons within the Jar)
+
+Getting java.lang.IllegalArgumentException: URI is not hierarchical when attempting to do this using the code in example 5.
+
+The below code is the culprit as it is returning null. Omitting the .toURI().getPath() does return a URI but it has ! characters scattered throughout.
+
+String jarPath = getClass().getProtectionDomain()
+.getCodeSource()
+.getLocation()
+.toURI()
+.getPath();
+
+2
+ Reply
+Karl Huebner
+8 years ago
+new File(classLoader.getResource(fileName).getFile());This won’t work with files if they have whitespaces or special characters (e.g. #) in their paths. Rather use
+
+new File(classLoader.getResource(fileName).toURI());
+
+2
+ Reply
+mkyong
+3 years ago
+Reply to  Karl Huebner
+Thanks, we updated the example with toURI()
+
+1
+ Reply
+vinay
+3 years ago
+Reply to  Karl Huebner
+thankq
+
+0
+ Reply
+ANKUR
+4 years ago
+Reply to  Karl Huebner
+toURI() does not work in jar and gives a error: URI is not hierarchical
+
+1
+ Reply
+Mohammed Salman
+6 years ago
+Reply to  Karl Huebner
+Thanks to MyKong and you I got it working!
+
+0
+ Reply
+Brandon Dudek
+6 years ago
+Reply to  Karl Huebner
+Thank You!
+
+0
+ Reply
+Jesús Gómez
+2 years ago
+I’m working on an app which uses a 3rd party library with an API expecting a java.io.File.
+
+The data to be passed “as a file” I could create dynamically or get from a resource.
+
+I could get the resource as a File with the class loader getResource method. But you already made the point: that will not work with a Jar.
+
+The only solution so far (independently if I create the data on the fly or get it (as Stream) from a resource) is to store that data in a temporal file and give it to the API.
+
+Is there a way to avoid the temporal file? Can we make a File object for something in memory?
+
+1
+ Reply
+Katy xinh dep
+4 years ago
+InputStream fis = getClass().getClassLoader().getResourceAsStream(“fileName.json”);
+JSONParser jsonParser = new JSONParser();
+JSONObject jsonObject = (JSONObject) jsonParser.parse(
+new InputStreamReader(fis, “UTF-8”));
+
+1
+ Reply
+daniel
+5 years ago
+Excellent!!
+
+1
+ Reply
+Nirupama
+8 years ago
+I would like to know how to know how to extract files which are in a folder which itself is in another folder.
+
+1
+ Reply
+stardustman
+27 days ago
+private InputStream getFileFromResource2(String fileName) throws URISyntaxException, IOException {
+
+ClassLoader classLoader = getClass().getClassLoader();
+URL resource = classLoader.getResource(fileName);
+if (resource == null) {
+throw new IllegalArgumentException(“file not found! ” + fileName);
+} else {
+
+// failed if files have whitespaces or special characters
+//return new File(resource.getFile());
+
+return resource.openConnection().getInputStream();
+}
+
+}
+
+this works well. you just need print the stream.
+the classLoader.getResourceAsStream() invoke classLoader.getResource() under the hood.
+
+0
+ Reply
+stardustman
+27 days ago
+Reply to  stardustman
+work well in a jar file.
+
+0
+ Reply
+Hemant
+4 months ago
+Hi @mkyong,
+
+for the below code I am getting unsupported operation error:
+
+FileSystems.newFileSystem(uri, Collections.emptyMap()).
+
+Could you please help with it?
+
+0
+ Reply
+vinh
+1 year ago
+These your solutions doesn’t work on eclipse !
+
+0
+ Reply
+Girja
+2 years ago
+I want to read all files from the resource folder and add them to a map, can you plz help ?
+
+0
+ Reply
+Kyle
+2 years ago
+How do I use example 2 to read/map data from a file to a Java object (POJO)?
+
+0
+ Reply
+mohamed
+2 years ago
+Does this code work with Java 11 or later versions?
+
+0
+ Reply
+mkyong
+2 years ago
+Reply to  mohamed
+Yes
+
+0
+ Reply
+Deepti
+2 years ago
+Getting null pointer exception as the a=value of Jarpath. I have to get all the resources placed under the resources/json.
+
+0
+ Reply
+jop
+2 years ago
+very good, thanks a lot 🙂
+
+0
+ Reply
+David
+2 years ago
+o lot of words for a simple thing. it is not good for java
+.may do you have a simpler way?
+
+0
+ Reply
+David
+2 years ago
+Reply to  David
+
+// to use jackson lib in maven repo
+try (InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("yourFile.json")) {
+    ObjectMapper mapper = new ObjectMapper();
+    return mapper.readValue(in, YourModel.class);
+} catch (Exception e) {
+    throw new RuntimeException(e);
+}
+Last edited 2 years ago by David
+1
+ Reply
+Watchuta
+3 years ago
+Amazing! Thanks!!
+Please advise:
+Is it possible for you to read from any JAR, even a JAR that you only reference in your pom.xml dependencies?
+iow: If you’re coding in ProjectA.war but in your pom.xml you reference ProjectB.jar… can you read a known filename(src/main/resources/this.xml) from ProjectB.jar, and output its content or use it as a file path in your ProjectA.war ?
+
+0
+ Reply
+Jose Requeijo Figueiras
+4 years ago
+Hello and thanks in advance. What about of reading not txt files? I.e. an .odf file?
+
+0
+ Reply
+Andreas Müller
+4 years ago
+Many thanks, you save me from a major headache which was plaguing me.
+
+0
+ Reply
+Mubeen
+5 years ago
+How to read a file not in Resources folder
+
+0
+ Reply
+mkyong
+3 years ago
+Reply to  Mubeen
+It depends on how you copy the file to your classpath. Usually, files in resources will copy to the root of the target/classes
+
+0
+ Reply
+Luke
+5 years ago
+What if you get NullPointer when retrieving the resource? Resource is in src/main/resources.
+
+0
+ Reply
+mkyong
+3 years ago
+Reply to  Luke
+For Maven, check the target/classes folder, is the resource file there?
+
+0
+ Reply
+Marcelino Puente-Perez
+3 years ago
+Reply to  Luke
+use .toResource() instead of getFile to change the URL to a string. This worked for me
+
+0
+ Reply
+ROGER DELOY PACK
+3 years ago
+Reply to  Luke
+Null means it didn’t find it, is it there? check your path?
+
+1
+ Reply
+Moreno Garcia
+5 years ago
+If I have this code
+InputStream in = this.getClass().getClassLoader().getResourceAsStream(somefile.txt);
+
+And my application is deployed on tomcat8. Where should I put somefile.txt so it can be found by the app?
+
+0
+ Reply
+Mohammed Salman
+6 years ago
+Thanks!
+
+0
+ Reply
+Dani
+6 years ago
+Obrigado, gracias
+
+0
+ Reply
+Leandro Temperoni
+6 years ago
+Thank you! This was reeeeeeeally helpful!
+
+0
+ Reply
+Pedro Rios
+6 years ago
+Great!
+
+0
+ Reply
+Krishna
+6 years ago
+I have put lot of efforts but finally i found solution from here great…………..
+
+0
+ Reply
+Jan Khonski
+7 years ago
+Why do you use forward slash as a file separator. Why not File.separator, which fails on Windows. And why does File.separator fail on Windows? What should I use (but not hardcoded)?
+
+0
+ Reply
+Load More Comments
+Cloud Builders
+
+freestar
+
+freestar
+Logo
+Mkyong.com has provided Java and Spring tutorials, guides, and code snippets since 2008. All published articles are simple, easy to understand, and well-tested in our development environment.
+Mkyong.com licenses all source code on this website under the MIT License.
+© 2008-2023 Mkyong.com
+Links
+Spring
+Docker
+Kotlin
+Android
+Quarkus
+Hibernate
+Maven
+Gradle
+Tomcat
+JDK
+OpenJDK
+Eclipse Temurin
+Oracle Java
+Guides
+Spring Guides
+Spring Docs
+Spring Boot Docs
+Java Tutorials
+Martin Flowler
+Java Code Geeks (Partner)
+Python Tutorials (Friend)
+About
+About Us
+Terms of Use
+Privacy Policy
+Code License
+Contact Us
+
+
+Freestar
