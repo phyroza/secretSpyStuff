@@ -1,6 +1,7 @@
 package com.tomslabs.exercises.chapter7;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,15 +36,7 @@ public class Exercise10 {
                 shortestPathTable.put(city, new ArrayList<>(List.of(city)));
             }
 
-            PriorityQueue<String> queue = new PriorityQueue<>((city1, city2) -> {
-                if (distanceTable.get(city1) > distanceTable.get(city2))
-                    return 1;
-                else if (distanceTable.get(city1) == distanceTable.get(city2)) {
-                    return 0;
-                } else {
-                    return -1;
-                }
-            });
+            PriorityQueue<String> queue = new PriorityQueue<>(Comparator.comparing(distanceTable::get));
             queue.addAll(roadNetwork.keySet());
 
             while (!queue.isEmpty()) {
