@@ -13,7 +13,7 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
 public class Exercise7 {
-    private static System.Logger logger = System.getLogger(Exercise1.class.getName());
+    private static System.Logger logger = System.getLogger(Exercise7.class.getName());
 
     private static final String[] words;
 
