@@ -7,13 +7,11 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.List;
 import java.util.stream.Stream;
 
 import static java.lang.System.Logger.Level.ERROR;
 
-public class Exercise1 {
-
+public class Exercise2 {
     private static System.Logger logger = System.getLogger(Exercise1.class.getName());
 
     private static final String[] words;
@@ -29,12 +27,15 @@ public class Exercise1 {
     }
 
     public static void main(String[] args) {
-        List<String> fiveLongWords = Stream.of(words).filter(s -> {
-            if (s.length() > 12) {
-                System.out.println(s);
-                return true;
-            }
-            return false;
-        }).limit(5).toList();
+        long seqStart = System.currentTimeMillis();
+        long longWordCount = Stream.of(words).filter(s -> s.length() > 12).count();
+        long seqEnd = System.currentTimeMillis();
+        System.out.printf("Sequential,  %d  hits in: %d millis\n", longWordCount, (seqEnd - seqStart));
+
+
+        long parrarelStart = System.currentTimeMillis();
+        long longWordCountParrarel = Stream.of(words).filter(s -> s.length() > 12).count();
+        long parallelEnd = System.currentTimeMillis();
+        System.out.printf("Parallel,  %d  hits in: %d millis\n", longWordCountParrarel, (parallelEnd - parrarelStart));
     }
 }
