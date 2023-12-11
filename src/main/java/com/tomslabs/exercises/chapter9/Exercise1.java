@@ -1,4 +1,4 @@
-package com.tomslabs.exercises;
+package com.tomslabs.exercises.chapter9;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
