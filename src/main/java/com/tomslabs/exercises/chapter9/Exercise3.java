@@ -9,7 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,12 +61,7 @@ public class Exercise3 {
 
         System.out.println("hitMap = " + hitMap);
 
-        Optional<Map.Entry<Charset, Long>> maxEntry = hitMap.entrySet().stream().max(new Comparator<>() {
-            @Override
-            public int compare(Map.Entry<Charset, Long> o1, Map.Entry<Charset, Long> o2) {
-                return (int) (o1.getValue() - o2.getValue());
-            }
-        });
+        Optional<Map.Entry<Charset, Long>> maxEntry = hitMap.entrySet().stream().max((o1, o2) -> (int) (o1.getValue() - o2.getValue()));
 
         return maxEntry.orElseThrow().getKey();
     }
