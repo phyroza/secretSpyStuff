@@ -10,15 +10,10 @@ import java.net.URL;
 public class Exercise6 {
     public static void main(String[] args) throws IOException {
         URL image = Exercise6.class.getResource("/img/sample.bmp");
-        BufferedImage bufferedImage = ImageIO.read(image);
         BufferedImage oriImage = ImageIO.read(image);
 
-        for (int x = 0; x < bufferedImage.getWidth(); x++) {
-            for (int y = 0; y < bufferedImage.getHeight(); y++) {
-                Color oriColor = new Color(bufferedImage.getRGB(x, y));
-                bufferedImage.setRGB(x, y, new Color(255 - oriColor.getRed(), 255 - oriColor.getGreen(), 255 - oriColor.getBlue()).getRGB());
-            }
-        }
+        BufferedImage bufferedImage = ImageIO.read(image);
+        inverseImage(bufferedImage);
 
         JFrame frame = new JFrame("Inversed image");
         JPanel panel = new JPanel() {
@@ -33,5 +28,14 @@ public class Exercise6 {
         frame.add(panel);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    private static void inverseImage(BufferedImage bufferedImage) {
+        for (int x = 0; x < bufferedImage.getWidth(); x++) {
+            for (int y = 0; y < bufferedImage.getHeight(); y++) {
+                Color oriColor = new Color(bufferedImage.getRGB(x, y));
+                bufferedImage.setRGB(x, y, new Color(255 - oriColor.getRed(), 255 - oriColor.getGreen(), 255 - oriColor.getBlue()).getRGB());
+            }
+        }
     }
 }
