@@ -12,8 +12,9 @@ import java.util.stream.Stream;
 
 public class Exercise1 {
     public static void main(String[] args) throws IOException {
-        List<Path> wordContainingFile = checkDirForWord(Paths.get("C:\\training\\javaimpatient"), "int");
-        System.out.println("Found (" + wordContainingFile.size() + ") files containing word " + "int" + ": " + wordContainingFile);
+        String wordToFind = "public";
+        List<Path> wordContainingFile = checkDirForWord(Paths.get("C:\\training\\javaimpatient"), wordToFind);
+        System.out.println("Found (" + wordContainingFile.size() + ") files containing word " + wordToFind + ": " + wordContainingFile);
     }
 
     private static List<Path> checkDirForWord(Path startPath, String word) {
