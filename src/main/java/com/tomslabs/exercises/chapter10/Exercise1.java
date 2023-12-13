@@ -14,7 +14,7 @@ public class Exercise1 {
     public static void main(String[] args) throws IOException {
         String wordToFind = "public";
         List<Path> wordContainingFile = checkDirForWord(Paths.get("C:\\training\\javaimpatient"), wordToFind);
-        System.out.println("Found (" + wordContainingFile.size() + ") files containing word " + wordToFind + ": " + wordContainingFile);
+        System.out.printf("Found (%d) files containing word \"%s\":\n %s", wordContainingFile.size(), wordToFind, wordContainingFile);
     }
 
     private static List<Path> checkDirForWord(Path startPath, String word) {
@@ -22,8 +22,8 @@ public class Exercise1 {
         List<Path> results = null;
 
         if (Files.isDirectory(startPath)) {
-            try (Stream<Path> fileDirlist = Files.list(startPath)) {
-                results = fileDirlist.parallel().map(path -> checkDirForWord(path, wordLowerCase)
+            try (Stream<Path> dirContents = Files.list(startPath)) {
+                results = dirContents.parallel().map(path -> checkDirForWord(path, wordLowerCase)
                 ).filter(l -> l != null && !l.isEmpty()).flatMap(Collection::stream).collect(Collectors.toList());
             } catch (IOException e) {
                 throw new RuntimeException(e);
