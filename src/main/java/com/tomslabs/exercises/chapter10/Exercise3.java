@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 public class Exercise3 {
 
-    public static final long TIMEOUT = 15_000L;
+    public static final long TIMEOUT = 5_000L;
 
     public static void main(String[] args) {
         Path dirPath = Paths.get("C:\\training\\javaimpatient");
@@ -47,18 +47,19 @@ public class Exercise3 {
                         .findFirst();
 
                 if (result.isPresent()) {
-                    String resultValue = result.get();
+                    String resultValue = result.get() + " " + path;
                     System.out.println(">>>> FOUND id: " + Thread.currentThread().getId() + " on path " + path + " : \t" + resultValue);
                     return resultValue;
                 } else {
                     System.out.println("id: " + Thread.currentThread().getId() + " Did not find word in my file: " + path);
                     Thread.sleep(TIMEOUT);
-                    return "Reached timeout, fuck this noise ";
+                    System.out.println("Time out guys :(");
+                    return "";
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (InterruptedException e) {
-                System.out.println("id: " + Thread.currentThread().getId() + " Didn't have a chance to finish :(");
+                System.out.println("id: " + Thread.currentThread().getId() + "- Someone else found it or time's out, bye bye");
                 return "";
             }
         };
