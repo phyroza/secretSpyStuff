@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter3;
+package com.tomslabs.exercises.javaImpatnient.chapter3;
 
 public class Employee implements Measurable {
     private final String name;

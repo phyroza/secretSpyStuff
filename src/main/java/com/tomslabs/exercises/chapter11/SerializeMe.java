@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter11;
+package com.tomslabs.exercises.javaImpatnient.chapter11;
 
 @Serializable(format = Serializable.SerializationFormat.TEXT)
 public class SerializeMe {

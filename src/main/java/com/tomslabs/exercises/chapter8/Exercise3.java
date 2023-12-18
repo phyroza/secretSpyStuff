@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter8;
+package com.tomslabs.exercises.javaImpatnient.chapter8;
 
 import java.util.stream.IntStream;
 import java.util.stream.Stream;

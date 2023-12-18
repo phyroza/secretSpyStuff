@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter9;
+package com.tomslabs.exercises.javaImpatnient.chapter9;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter9;
+package com.tomslabs.exercises.javaImpatnient.chapter9;
 
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;

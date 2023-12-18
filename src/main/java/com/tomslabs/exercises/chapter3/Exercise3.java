@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter3;
+package com.tomslabs.exercises.javaImpatnient.chapter3;
 
 import javax.imageio.stream.ImageOutputStream;
 import java.util.Scanner;

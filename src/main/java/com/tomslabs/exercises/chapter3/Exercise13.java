@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter3;
+package com.tomslabs.exercises.javaImpatnient.chapter3;
 
 import java.io.File;
 import java.nio.file.Files;

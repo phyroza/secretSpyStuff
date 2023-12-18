@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter2;
+package com.tomslabs.exercises.javaImpatnient.chapter2;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter8;
+package com.tomslabs.exercises.javaImpatnient.chapter8;
 
 public class Exercise6 {
     public static void main(String[] args) {

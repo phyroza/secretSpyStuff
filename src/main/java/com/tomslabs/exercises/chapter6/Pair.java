@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter6;
+package com.tomslabs.exercises.javaImpatnient.chapter6;
 
 class Pair<E extends Comparable<? super E>> {
     E first;

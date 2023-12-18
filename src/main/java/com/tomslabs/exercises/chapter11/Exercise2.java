@@ -1,6 +1,6 @@
-package com.tomslabs.exercises.chapter11;
+package com.tomslabs.exercises.javaImpatnient.chapter11;
 
-import com.tomslabs.exercises.chapter11.Serializable.SerializationFormat;
+import com.tomslabs.exercises.javaImpatnient.chapter11.Serializable.SerializationFormat;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter4;
+package com.tomslabs.exercises.javaImpatnient.chapter4;
 
 public class Exercise1_2 {
     private static class Point {

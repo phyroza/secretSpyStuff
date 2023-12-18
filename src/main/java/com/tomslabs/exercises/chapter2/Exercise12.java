@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter2;
+package com.tomslabs.exercises.javaImpatnient.chapter2;
 
 import java.io.PrintStream;
 import java.time.DayOfWeek;

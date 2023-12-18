@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter8;
+package com.tomslabs.exercises.javaImpatnient.chapter8;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class Exercise7 {
 
     static {
         try {
-            File wordsFile = new File(com.tomslabs.exercises.chapter7.Exercise7.class.getResource("/text/wordsFile.txt").toURI());
+            File wordsFile = new File(com.tomslabs.exercises.javaImpatnient.chapter7.Exercise7.class.getResource("/text/wordsFile.txt").toURI());
             words = Files.readString(wordsFile.toPath(), StandardCharsets.UTF_8).split("\\PL+");
         } catch (URISyntaxException | IOException e) {
             logger.log(ERROR, "Could not locate or read wordsFile");

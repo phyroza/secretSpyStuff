@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter10;
+package com.tomslabs.exercises.javaImpatnient.chapter10;
 
 public class TestClass {
     static int sum(int... vals) {

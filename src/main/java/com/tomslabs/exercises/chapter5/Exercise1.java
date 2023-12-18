@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter5;
+package com.tomslabs.exercises.javaImpatnient.chapter5;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter10;
+package com.tomslabs.exercises.javaImpatnient.chapter10;
 
 import java.util.Arrays;
 import java.util.Random;

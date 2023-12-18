@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter4;
+package com.tomslabs.exercises.javaImpatnient.chapter4;
 
 public class Line extends Shape implements Cloneable {
     private final Point from;

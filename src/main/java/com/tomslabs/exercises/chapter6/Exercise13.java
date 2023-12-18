@@ -1,13 +1,11 @@
-package com.tomslabs.exercises.chapter6;
+package com.tomslabs.exercises.javaImpatnient.chapter6;
 
 import java.util.Comparator;
 import java.util.List;
 
-import static com.tomslabs.exercises.chapter6.Exercise12.minmax;
-
 public class Exercise13 {
     public static <T> void maxmin(List<T> elements, Comparator<? super T> comp, List<? super T> result) {
-        minmax(elements, comp, result);
+        Exercise12.minmax(elements, comp, result);
         swap(result, 0, 1);
     }
 

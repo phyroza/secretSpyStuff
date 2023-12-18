@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter7;
+package com.tomslabs.exercises.javaImpatnient.chapter7;
 
 import java.util.Comparator;
 import java.util.HashSet;

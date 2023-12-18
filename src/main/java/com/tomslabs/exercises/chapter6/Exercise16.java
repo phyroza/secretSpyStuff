@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter6;
+package com.tomslabs.exercises.javaImpatnient.chapter6;
 
 public class Exercise16 {
     // 1. Wymazanie par do Comparable

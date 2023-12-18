@@ -1,7 +1,7 @@
-package com.tomslabs.exercises.chapter3.Exercise2;
+package com.tomslabs.exercises.javaImpatnient.chapter3.Exercise2;
 
-import com.tomslabs.exercises.chapter3.Employee;
-import com.tomslabs.exercises.chapter3.Measurable;
+import com.tomslabs.exercises.javaImpatnient.chapter3.Employee;
+import com.tomslabs.exercises.javaImpatnient.chapter3.Measurable;
 
 import java.util.Arrays;
 import java.util.Comparator;

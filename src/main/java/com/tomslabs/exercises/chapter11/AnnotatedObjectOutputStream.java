@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter11;
+package com.tomslabs.exercises.javaImpatnient.chapter11;
 
 import java.io.IOException;
 import java.io.NotSerializableException;
@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-import static com.tomslabs.exercises.chapter11.Serializable.SerializationFormat.TEXT;
+import static com.tomslabs.exercises.javaImpatnient.chapter11.Serializable.SerializationFormat.TEXT;
 
 public class AnnotatedObjectOutputStream {
     public static final Charset charset = StandardCharsets.UTF_8;

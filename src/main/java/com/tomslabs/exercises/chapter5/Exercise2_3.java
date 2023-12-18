@@ -1,9 +1,7 @@
-package com.tomslabs.exercises.chapter5;
+package com.tomslabs.exercises.javaImpatnient.chapter5;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
-import static com.tomslabs.exercises.chapter5.Exercise1.DATA_DIR;
 
 public class Exercise2_3 {
     static double sumOfValues(String filename) throws IOException {
@@ -18,8 +16,8 @@ public class Exercise2_3 {
 
     public static void main(String[] args) throws IOException {
         try {
-            System.out.println(sumOfValues(DATA_DIR + "doubleValuesOK.txt"));
-            System.out.println(sumOfValues(DATA_DIR + "doubleValuesZonk.txt"));
+            System.out.println(sumOfValues(Exercise1.DATA_DIR + "doubleValuesOK.txt"));
+            System.out.println(sumOfValues(Exercise1.DATA_DIR + "doubleValuesZonk.txt"));
         } catch (Exception e) {
             e.printStackTrace();
         }

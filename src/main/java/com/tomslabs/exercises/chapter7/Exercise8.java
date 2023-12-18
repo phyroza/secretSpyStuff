@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter7;
+package com.tomslabs.exercises.javaImpatnient.chapter7;
 
 import java.io.File;
 import java.io.IOException;

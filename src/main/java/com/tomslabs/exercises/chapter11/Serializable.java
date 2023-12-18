@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter11;
+package com.tomslabs.exercises.javaImpatnient.chapter11;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

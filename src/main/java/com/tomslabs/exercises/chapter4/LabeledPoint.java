@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter4;
+package com.tomslabs.exercises.javaImpatnient.chapter4;
 
 class LabeledPoint extends Point {
     private String label;

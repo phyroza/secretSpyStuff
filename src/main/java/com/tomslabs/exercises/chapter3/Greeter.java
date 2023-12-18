@@ -1,4 +1,4 @@
-package com.tomslabs.exercises.chapter3;
+package com.tomslabs.exercises.javaImpatnient.chapter3;
 
 record Greeter(String target, int n) implements Runnable {
     @Override
